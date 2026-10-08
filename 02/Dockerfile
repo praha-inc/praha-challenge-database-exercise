@@ -3,7 +3,7 @@ WORKDIR /workspace
 RUN wget -O repo.zip https://github.com/datacharmer/test_db/archive/refs/heads/master.zip && \
     unzip repo.zip
 
-FROM mysql:8.0
+FROM mysql:8.4
 WORKDIR /docker-entrypoint-initdb.d
 COPY --from=helper /workspace/test_db-master/employees.sql \
                    /workspace/test_db-master/load_departments.dump \
